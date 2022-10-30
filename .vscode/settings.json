@@ -1,0 +1,8 @@
+{
+    "eslint.alwaysShowStatus": false,
+    "eslint.format.enable": true,
+    "editor.wordWrap": "on",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    }
+}
