@@ -1,6 +1,6 @@
 
 
-import { Container } from 'components/Container'
+// import { Container } from 'components/Container'
 import * as S from './styles'
 
 type BaseProps = {
@@ -10,10 +10,10 @@ type BaseProps = {
 const Base = ({ children }: BaseProps) => (
   <S.Wrapper>
     <S.Content>{children}</S.Content>
-    <S.SectionFooter>
+    {/* <S.SectionFooter>
       <Container>
       </Container>
-    </S.SectionFooter>
+    </S.SectionFooter> */}
   </S.Wrapper>
 );
 
