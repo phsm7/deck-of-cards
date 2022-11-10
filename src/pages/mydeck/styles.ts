@@ -15,13 +15,13 @@ export const Content = styled.div`
 `
 
 export const NumberOfCards = styled.h2`
-  ${({theme}) => `
+  ${({theme}) => css`
     font-size: ${theme.font.sizes.xxlarge};
   `}
 `
 
 export const MaxCards = styled.h3`
-  ${({theme})=> `
+  ${({theme})=> css`
     font-size: ${theme.font.sizes.xxlarge};
     color: ${theme.colors.error};
   `}
