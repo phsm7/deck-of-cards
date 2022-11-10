@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Content = styled.div`
-  ${({theme}) => `
+  ${({theme}) => css`
     display : flex;
     flex-direction: column;
     gap: 2rem;
