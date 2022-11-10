@@ -55,4 +55,6 @@ export type DeckTypes = {
   getNewDeck:  () => Promise<DeckResultProps>;
   shuffleDeck: (id: string) => Promise<DeckShuffleProps>;
   drawNewCard: () => Promise<DrawCardProps>;
+  counterDraw: number;
+  setCounterDraw: React.Dispatch<SetStateAction<number>>;
 }

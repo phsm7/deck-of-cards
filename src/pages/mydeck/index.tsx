@@ -12,7 +12,13 @@ import { useRouter } from 'next/router'
 import { DeckService } from 'service/DeckService'
 
 export default function DeckPage() {
-  const { cards, setCards, drawNewCard } = useDeckContext();
+  const { 
+    cards, 
+    setCards, 
+    drawNewCard, 
+    counterDraw, 
+    setCounterDraw
+  } = useDeckContext();
   const [name, setName] = useState('');
 
   const router = useRouter();
@@ -33,18 +39,21 @@ export default function DeckPage() {
   
   async function drawCard() {
     try {
-      const res = await drawNewCard();
-      const newCard = res.cards;
+      if(counterDraw < 3){
+        const res = await drawNewCard();
+        const newCard = res.cards;
 
-      var currentArrayOfCards = cards;
-      currentArrayOfCards = [
-        ...currentArrayOfCards,
-        newCard
-      ]
-      setCards(currentArrayOfCards);
+        var currentArrayOfCards = cards;
+        currentArrayOfCards = [
+          ...currentArrayOfCards,
+          newCard
+        ]
+        setCards(currentArrayOfCards);
 
-      setSessionStorage('cards', currentArrayOfCards);
-      cards.push(newCard);
+        setSessionStorage('cards', currentArrayOfCards);
+        cards.push(newCard);
+        setCounterDraw(oldstate => oldstate + 1);
+      }
     } catch (error) {      
       router.push('/');
     }
@@ -78,11 +87,16 @@ export default function DeckPage() {
       <DefaultTemplate>
         <Heading name={name} />
         <S.Content>
+          {counterDraw > 2 && <S.MaxCards>Máximo de cartas atingido! Tente embaralhar as cartas...</S.MaxCards>}
           <Cards cards={cards} />
 
           <S.NumberOfCards>Você tem {cards.length} cartas no deck</S.NumberOfCards>
 
-          <Button type="button" onClick={() => drawCard()}>
+          <Button 
+            type="button"
+            onClick={() => drawCard()}
+            disabled={counterDraw > 2}
+            >
             <span>Draw</span>
           </Button>
           
