@@ -15,7 +15,7 @@ const Button = (
   {
     children,
     size = 'medium',
-    fullWidth = false,
+    fullWidth = true,
     ...props
   }: ButtonProps
 ) => (

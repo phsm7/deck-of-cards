@@ -1,38 +1,20 @@
-import styled, { css, DefaultTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ButtonProps } from '.';
-
-export type WrapperProps = {
-  
-} & ButtonProps;
 
 const wrapperModifiers = {
   disabled: () => css`
-    &:disabled {
-      cursor: not-allowed;
-      filter: saturate(30%);
-    }
-  `,
-  small: (theme: DefaultTheme) => css`
-    height: 3rem;
-    font-size: ${theme.font.sizes.xsmall};
-  `,
-  medium: (theme: DefaultTheme) => css`
-    height: 4rem;
-    font-size: ${theme.font.sizes.small};
-    padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
-  `,
-  large: (theme: DefaultTheme) => css`
-    height: 5rem;
-    font-size: ${theme.font.sizes.medium};
-    padding: ${theme.spacings.xxsmall} ${theme.spacings.xlarge};
-  `,
+  &:disabled {
+    cursor: not-allowed;
+    filter: saturate(30%);
+  }
+`,
   fullWidth: () => css`
     width: 100%;
   `,
 };
 
-export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, disabled }) => css`
+export const Wrapper = styled.button<ButtonProps>`
+  ${({ theme, fullWidth, disabled }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -42,11 +24,15 @@ export const Wrapper = styled.button<WrapperProps>`
     cursor: pointer;
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall};
+    
+    height: 5rem;
+    font-size: ${theme.font.sizes.medium};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.xlarge};
+
     text-decoration: none;
     &:hover {
-      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+      background: ${theme.colors.btnHover};
     }
-    ${!!size && wrapperModifiers[size](theme)};
     ${!!fullWidth && wrapperModifiers.fullWidth()};
     ${disabled && wrapperModifiers.disabled()}
   `}
