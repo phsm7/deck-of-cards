@@ -49,7 +49,7 @@ import { ErrorProps } from 'types/Error';
       try {
         setLoading(true);
         const response = await DeckService.shuffle(id);
-        console.log(response);
+      
         if(!!response?.data?.deck_id){
           const obj = {
             success: response.data.success,

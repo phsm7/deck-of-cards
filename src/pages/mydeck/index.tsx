@@ -30,7 +30,7 @@ export default function DeckPage() {
     setCards(newArray);
     setSessionStorage('cards', newArray);
   }
-console.log(cards);
+  
   async function drawCard() {
     try {
       const res = await drawNewCard();
