@@ -1,7 +1,7 @@
 # Deck Of Cards 
 Acesse através do endereço
 ```bash
-  https://deck-of-cards-five.vercel.app/mydeck
+  https://deck-of-cards-five.vercel.app
 ```
 Aplicação consome dados de API pública Deck Of Cards  https://deckofcardsapi.com/
 
