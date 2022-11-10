@@ -1,4 +1,4 @@
-# Poke Api
+# Deck Of Cards 
 
 Aplicação consome api pública Deck Of Cards 
 
