@@ -2,14 +2,42 @@
 import DefaultTemplate from 'templates/Default'
 import useDeckContext from 'hooks/useDeckContext'
 import Button from 'components/Button'
-import Head from 'next/head';
-import * as S from './styles'
+import Head from 'next/head'
 import Heading from 'components/Heading'
 import { useEffect, useState } from 'react'
 import { getSessionStorage, setSessionStorage } from 'hooks/useSession'
 import Cards from 'components/Cards'
 import { useRouter } from 'next/router'
 import { DeckService } from 'service/DeckService'
+import styled, { css } from "styled-components";
+
+
+const Content = styled.div`
+${({theme}) => css`
+  display : flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 80vw;
+  max-width: 90vw;
+  background: ${theme.colors.gray};
+`}
+`
+
+const NumberOfCards = styled.h2`
+${({theme}) => css`
+  font-size: ${theme.font.sizes.xxlarge};
+`}
+`
+
+const MaxCards = styled.h3`
+${({theme})=> css`
+  font-size: ${theme.font.sizes.xxlarge};
+  color: ${theme.colors.error};
+`}
+`
 
 export default function DeckPage() {
   const { 
@@ -86,11 +114,11 @@ export default function DeckPage() {
       </Head>
       <DefaultTemplate>
         <Heading name={name} />
-        <S.Content>
-          {counterDraw > 2 && <S.MaxCards>Máximo de cartas atingido! Tente embaralhar as cartas...</S.MaxCards>}
+        <Content>
+          {counterDraw > 2 && <MaxCards>Máximo de cartas atingido! Tente embaralhar as cartas...</MaxCards>}
           <Cards cards={cards} />
 
-          <S.NumberOfCards>Você tem {cards.length} cartas no deck</S.NumberOfCards>
+          <NumberOfCards>Você tem {cards.length} cartas no deck</NumberOfCards>
 
           <Button 
             type="button"
@@ -104,7 +132,7 @@ export default function DeckPage() {
             <span>Shuffle</span>
           </Button>
 
-        </S.Content>
+        </Content>
       </DefaultTemplate>
     </>
   )
