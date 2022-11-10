@@ -14,11 +14,15 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       color: ${({ theme }) => theme.colors.primary};
-      background-color: ${({ theme }) => theme.colors.black};
+      background-color: ${({ theme }) => theme.colors.gray};
   }
   a {
     color: inherit;
     text-decoration: none;
+  }
+  .loading {
+    font-size: ${({theme}) => theme.font.sizes.xlarge};
+    text-transform: uppercase;
   }
 `;
 

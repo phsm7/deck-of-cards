@@ -1,17 +1,18 @@
 const theme = {
   grid: {
-    container: '102.4rem',
+    container: '52rem',
     gutter: '3.2rem'
   },
   border: {
     radius: '1.4rem'
   },
   colors: {
-    primary: 'purple',
+    primary: '#67057c',
     white: '#FFFFFF',
     black: '#000000',
+    btnHover: 'linear-gradient(360deg, #000000 0%, #67057c 100%)',
     gray: '#F2F2F2',
-    error: 'red',
+    error: '#b00501',
   },
   font: {
     normal: 400,
