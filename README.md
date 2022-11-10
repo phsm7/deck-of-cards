@@ -1,6 +1,6 @@
 # Deck Of Cards 
 
-Aplicação consome api pública Deck Of Cards 
+Aplicação consome api pública Deck Of Cards  https://deckofcardsapi.com/
 
 ## Funcionalidades
 
