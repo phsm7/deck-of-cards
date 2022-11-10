@@ -8,6 +8,16 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'deckofcardsapi.com',
+        // port: '',
+        pathname: '/static/img/**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig
