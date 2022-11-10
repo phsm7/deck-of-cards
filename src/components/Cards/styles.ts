@@ -19,7 +19,10 @@ export const Card = styled.div`
     margin: 0 auto;
   }
 `
-
+export const Value = styled.p`
+  font-size: 16px;
+  text-align: center;
+`
 export const Description = styled.p`
   font-size: 16px;
   text-align: center;

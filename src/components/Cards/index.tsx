@@ -43,23 +43,16 @@ const settings: SliderSettings = {
   ]
 }
 
-/*
-
-  code: string;
-  image: string; 
-  images: ImagesProps;
-  value: string;
-  suit: string;
-*/
-
 const Cards = ({cards}: DeckProps) => {
+  console.log(cards);
   return (
     <S.Wrapper>
       <Slider settings={settings}>
         {cards.map((item, index) => (
           <S.Card key={index}>
-            <S.Description>{item.value} of {item.suit}</S.Description>
+            <S.Value>Valor: {item.value}</S.Value>
             <Image src={item.image} priority alt="Carta do baralho" width={226/2} height={314/2} />
+            <S.Description>{item.code} ( {item.value} {item.suit} )</S.Description>
           </S.Card>
         ))}
       </Slider>
