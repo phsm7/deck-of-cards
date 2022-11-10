@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     min-height: 50rem;
+    background: ${theme.colors.white};
+    padding: 5rem;
+    border-radius: ${theme.border.radius};
+    box-shadow: 0 0 1em ${theme.colors.primary};
   `}
 `
 

@@ -16,6 +16,7 @@ import { ErrorProps } from 'types/Error';
     const [deckId, setDeckId] = useState<NewDeckProps>('');
     const [cards, setCards] = useState<CardProps[]>([]);
     const [error, setError] = useState<ErrorProps>({});
+    const [counterDraw, setCounterDraw] = useState<number>(0);
 
     async function getNewDeck() {
       try {
@@ -105,7 +106,9 @@ import { ErrorProps } from 'types/Error';
           setCards,
           getNewDeck,
           shuffleDeck,
-          drawNewCard
+          drawNewCard,
+          counterDraw, 
+          setCounterDraw
         }}
       >
         {children}

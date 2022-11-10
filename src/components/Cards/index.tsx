@@ -44,7 +44,6 @@ const settings: SliderSettings = {
 }
 
 const Cards = ({cards}: DeckProps) => {
-  console.log(cards);
   return (
     <S.Wrapper>
       <Slider settings={settings}>
