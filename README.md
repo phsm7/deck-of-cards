@@ -60,7 +60,7 @@ Inicie o servidor
   yarn dev
 ```
 Acesse no navegador através do endereço
-```http
+```bash
   http://localhost:3000
 ```
 
@@ -69,7 +69,7 @@ Acesse no navegador através do endereço
 
 #### Baseurl
 
-```http
+```bash
   http://localhost:3000
 ```
 
